@@ -28,7 +28,7 @@ void Player::Initialize()
 	playerSprite.SetAngle(0);
 	playerSprite.SetSize(playerSize, playerSize);
 
-	playerTexture.Load(_T("test.png"));
+	playerTexture.Load(_T("Graphic/test.png"));
 	playerTexture.SetDivide(1, 1);
 	playerTexture.SetNum(0, 0);
 }
@@ -46,19 +46,19 @@ void Player::Draw()
 
 void Player::Control()
 {
-	if (pDi->KeyState(DIK_LEFTARROW))
+	if (pDi->KeyState(DIK_LEFTARROW) && playerPos.x > 0 + playerSize / 2)
 	{
 		playerPos.x -= speed;
 	}
-	if (pDi->KeyState(DIK_RIGHTARROW))
+	if (pDi->KeyState(DIK_RIGHTARROW) && playerPos.x < 640 - playerSize / 2)
 	{
 		playerPos.x += speed;
 	}
-	if (pDi->KeyState(DIK_UP))
+	if (pDi->KeyState(DIK_UP) && playerPos.y > 0 + playerSize / 2)
 	{
 		playerPos.y -= speed;
 	}
-	if (pDi->KeyState(DIK_DOWN))
+	if (pDi->KeyState(DIK_DOWN) && playerPos.y < 480 - playerSize / 2)
 	{
 		playerPos.y += speed;
 	}

@@ -3,12 +3,7 @@
 #pragma comment(lib,"winmm.lib")
 #include <tchar.h>
 
-#include"Direct3D.h"
-#include"Sprite.h"
-#include"Texture.h"
-#include"DirectInput.h"
-
-#include"Player.h"
+#include"GameState.h"
 
 //ウィンドウプロシージャ
 LRESULT CALLBACK WndPrc
@@ -279,8 +274,8 @@ int _stdcall WinMain
 	DirectInput*pDi = DirectInput::GetInstansce();
 	pDi->Init(hWnd);
 
-	Player player;
-	player.Initialize();
+	GameState gameState;
+	gameState.Initialize();
 
 	//メインループ
 	//メッセージループ
@@ -330,7 +325,7 @@ int _stdcall WinMain
 				//バックバッファのクリア
 				d3d.ClearScreen();
 
-				player.Draw();
+				gameState.Update();
 
 				//描画終了の合図
 				d3d.EndScene();
