@@ -1,15 +1,10 @@
 #pragma once
 
-#include"Direct3D.h"
-#include"DirectInput.h"
-#include"Sprite.h"
-#include"Texture.h"
+#include"Header.h"
 
 class Player
 {
 private:
-	//ポジション
-	D3DXVECTOR2 playerPos;
 	//スピード
 	float speed;
 	//スプライト,テクスチャ
@@ -31,4 +26,6 @@ public:
 	void Draw();
 	void Control();
 
+	//ポジション
+	D3DXVECTOR2 playerPos;
 };

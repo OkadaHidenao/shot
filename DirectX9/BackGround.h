@@ -1,9 +1,6 @@
 #pragma once
 
-#include"Direct3D.h"
-#include"DirectInput.h"
-#include"Sprite.h"
-#include"Texture.h"
+#include"Header.h"
 
 #define SCROLL 2
 

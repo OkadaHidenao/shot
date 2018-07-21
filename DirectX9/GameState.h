@@ -2,6 +2,7 @@
 
 #include"BackGround.h"
 #include"Player.h"
+#include"Bullet.h"
 
 enum Sequence
 {
@@ -17,9 +18,19 @@ private:
 	//インスタンス作成群
 	BackGround* backGround;
 	Player* player;
+	Bullet* bullet;
 
 	//ゲーム分岐用
 	Sequence gameSeq;
+
+	//キー操作用
+	DirectInput*pDi = DirectInput::GetInstansce();
+
+	//弾の数
+	int BulletNum;
+
+	//カウント変数
+	int count;
 
 public:
 	GameState();

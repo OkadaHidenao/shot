@@ -3,6 +3,7 @@
 Player::Player()
 {
 	//コンストラクタ
+
 }
 Player::~Player()
 {
@@ -15,8 +16,8 @@ void Player::Initialize()
 	//メインループ前に呼ぶ
 
 	//ポジションの設定
-	playerPos.x = 320;
-	playerPos.y = 450;
+	playerPos.x = WINDOW_WIDTH / 2;
+	playerPos.y = WINDOW_HEIGHT - 30;
 
 	//スピード
 	speed = 2.0f;
@@ -50,7 +51,7 @@ void Player::Control()
 	{
 		playerPos.x -= speed;
 	}
-	if (pDi->KeyState(DIK_RIGHTARROW) && playerPos.x < 640 - playerSize / 2)
+	if (pDi->KeyState(DIK_RIGHTARROW) && playerPos.x < WINDOW_WIDTH - playerSize / 2)
 	{
 		playerPos.x += speed;
 	}
@@ -58,7 +59,7 @@ void Player::Control()
 	{
 		playerPos.y -= speed;
 	}
-	if (pDi->KeyState(DIK_DOWN) && playerPos.y < 480 - playerSize / 2)
+	if (pDi->KeyState(DIK_DOWN) && playerPos.y < WINDOW_HEIGHT - playerSize / 2)
 	{
 		playerPos.y += speed;
 	}

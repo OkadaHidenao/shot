@@ -146,8 +146,8 @@ HRESULT MakeWindow
 	 HWND &refHWnd,	//ウィンドウの識別子
 					//正しくウィンドウの作成ができたら
 					//この変数に識別子を代入する
-	int width = 640,	//クライアント領域の幅
-	int height = 480)	//クライアント領域の高さ
+	int width = WINDOW_WIDTH,	//クライアント領域の幅
+	int height = WINDOW_HEIGHT)	//クライアント領域の高さ
 	//クライアント領域はウィンドウ全体から
 	//外枠やメニューの部分を除いた物と今は思っておけばOK
 {
